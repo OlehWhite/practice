@@ -1,0 +1,20 @@
+.info-container {
+  display: flex;
+  gap: 3rem;
+  margin: 40px
+}
+
+.todo-wrapper, .user-wrapper {
+  border: 1px solid #000000;
+  background: #caffca;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
