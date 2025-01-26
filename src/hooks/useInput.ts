@@ -1,7 +1,8 @@
 import { ChangeEvent, useState } from "react";
 import useValidation from "./useValidation.ts";
+import { IValidations } from "../types/type.form.ts";
 
-const useInput = (initialValue: string, validations: { isEmpty: boolean }) => {
+const useInput = (initialValue: string, validations: IValidations) => {
   const [value, setValue] = useState<string>(initialValue);
   const [isDirty, setIsDirty] = useState<boolean>(false);
   const { isEmpty } = useValidation(value, validations); // or valid
@@ -10,7 +11,7 @@ const useInput = (initialValue: string, validations: { isEmpty: boolean }) => {
     setValue(e.target.value);
   };
 
-  const onBlur = (_: ChangeEvent<HTMLInputElement>) => {
+  const onBlur = () => {
     setIsDirty(true);
   };
 

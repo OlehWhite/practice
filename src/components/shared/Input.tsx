@@ -1,16 +1,7 @@
-import { ChangeEvent, JSX } from "react";
+import { FC } from "react";
+import { InputProps } from "../../types/type.form.ts";
 
-interface Props {
-  type: string;
-  label: string;
-  htmlFor: string;
-  value: string;
-  onChange: (value: ChangeEvent<HTMLInputElement>) => void;
-  onBlur: (value: ChangeEvent<HTMLInputElement>) => void;
-  errorMessage: JSX.Element;
-}
-
-const Input = ({
+const Input: FC<InputProps> = ({
   type,
   label,
   htmlFor,
@@ -18,7 +9,7 @@ const Input = ({
   onChange,
   onBlur,
   errorMessage,
-}: Props) => {
+}) => {
   return (
     <div className="input-container">
       <label htmlFor={htmlFor}>{label}</label>
