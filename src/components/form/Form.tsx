@@ -1,10 +1,10 @@
-import { FormEvent } from "react";
+import { FC, FormEvent } from "react";
 import Input from "../shared/Input.tsx";
 import useInput from "../../hooks/useInput.ts";
 import ErrorMessage from "./ErrorMessage.tsx";
 import "../../styles/form.css";
 
-const Form = () => {
+const Form: FC = () => {
   const email = useInput("", { isEmpty: true });
   const password = useInput("", { isEmpty: true });
 
@@ -26,8 +26,8 @@ const Form = () => {
         label="Email"
         htmlFor="email"
         value={email.value}
-        onChange={(e) => email.onChange(e)}
-        onBlur={(e) => email.onBlur(e)}
+        onChange={email.onChange}
+        onBlur={email.onBlur}
         errorMessage={<ErrorMessage error={email.isDirty && email.isEmpty} />}
       />
 
@@ -36,8 +36,8 @@ const Form = () => {
         label="Password"
         htmlFor="password"
         value={password.value}
-        onChange={(e) => password.onChange(e)}
-        onBlur={(e) => password.onBlur(e)}
+        onChange={password.onChange}
+        onBlur={password.onBlur}
         errorMessage={
           <ErrorMessage error={password.isDirty && password.isEmpty} />
         }
