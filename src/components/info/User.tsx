@@ -1,6 +1,7 @@
+import { FC, memo } from "react";
 import { IUserProps } from "../../types/info.type.ts";
 
-const User = ({ user }: IUserProps) => {
+const User: FC<IUserProps> = memo(({ user }) => {
   return (
     <div className="user-wrapper">
       <h3>{user.id}</h3>
@@ -9,6 +10,6 @@ const User = ({ user }: IUserProps) => {
       <p>{user.email}</p>
     </div>
   );
-};
+});
 
 export default User;

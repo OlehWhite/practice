@@ -1,5 +1,5 @@
 import { FC, FormEvent } from "react";
-import Input from "../shared/Input.tsx";
+import Input from "./Input.tsx";
 import useInput from "../../hooks/useInput.ts";
 import ErrorMessage from "./ErrorMessage.tsx";
 import "../../styles/form.css";
